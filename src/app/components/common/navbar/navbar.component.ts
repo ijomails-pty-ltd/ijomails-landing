@@ -35,10 +35,10 @@ export class NavbarComponent implements OnInit {
             id: 'team',
             title: 'Team',
         },
-        {
-            id: 'faq',
-            title: 'FAQ',
-        },
+        // {
+        //     id: 'faq',
+        //     title: 'FAQ',
+        // },
         {
             id: 'contact',
             title: 'Contact',
