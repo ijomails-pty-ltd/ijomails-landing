@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+class Content {
+    title: string;
+    paragraph: string;
+    button1: string;
+    button2: string;
+}
+class Image {
+    img: string;
+}
 
 @Component({
   selector: 'app-app-banner',
@@ -7,32 +16,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppBannerComponent implements OnInit {
 
+    mainBannerContent: Content[] = [
+        {
+            title: 'Best Mobile App For Your Business',
+            paragraph: 'ijomails vision aims to oust the paper set up of mailing and go digital. We are out to develop into the best electronic mailing process, and most reliable online payment provider among other services. We envisioned us towards developing into a fast-growing global mail processing provider in the world.',
+            button1: 'assets/img/store/1.png',
+            button2: 'assets/img/store/2.png'
+        }
+    ];
+    bannerImage: Image[] = [
+        {
+            img: 'assets/img/app-banner.png'
+        }
+    ];
     constructor() { }
 
     ngOnInit(): void {
     }
 
-    mainBannerContent: Content[] = [
-        {
-            title: 'Best Mobile App For Your Business',
-            paragraph: 'App ipsum dolor sit amet, consectetur adipiscing elit, sed do mo tempor incididunt ut labore et dolore magna aliqua.',
-            button1: 'assets/img/store/1.png',
-            button2: 'assets/img/store/2.png'
-        }
-    ]
-    bannerImage: Image[] = [
-        {
-            img: 'assets/img/app-banner.png'
-        }
-    ]
 
-}
-class Content {
-    title : string;
-    paragraph : string;
-    button1 : string;
-    button2 : string;
-}
-class Image {
-    img : string;
 }

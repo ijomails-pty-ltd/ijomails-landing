@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-
+class Image {
+    img: string;
+}
+class Content {
+    title: string;
+    paragraph1: string;
+    paragraph2: string;
+    button1: string;
+    button2: string;
+}
 @Component({
     selector: 'app-app-download',
     templateUrl: './app-download.component.html',
@@ -7,36 +16,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppDownloadComponent implements OnInit {
 
-    constructor() { }
-
-    ngOnInit(): void {
-    }
-    
     appDownloadImage: Image[] = [
         {
             img: 'assets/img/why-choose.png'
         }
-    ]
+    ];
     appDownloadContent: Content[] = [
         {
             title: 'Download Our Apps Today',
-            paragraph1: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            paragraph2: 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account the system and expound the actual teachings of the great.',
-            paragraph3: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            paragraph1: 'ijomails supports all type of mails, also supports document scanning.',
+            paragraph2: 'Feel the convenient way of sending mails, invoices, payslips, send and receive money using our ijomails app.',
             button1: 'assets/img/store/1.png',
             button2: 'assets/img/store/2.png'
         }
-    ]
+    ];
+    constructor() { }
 
-}
-class Image {
-    img : string;
-}
-class Content {
-    title : string;
-    paragraph1 : string;
-    paragraph2 : string;
-    paragraph3 : string;
-    button1 : string;
-    button2 : string;
+    ngOnInit(): void {
+    }
+
 }

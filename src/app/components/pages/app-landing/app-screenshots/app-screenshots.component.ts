@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+class SectionTitleContent {
+    title: string;
+    paragraphText: string;
+}
+class Image {
+    img: string;
+}
 
 @Component({
     selector: 'app-app-screenshots',
@@ -7,17 +14,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppScreenshotsComponent implements OnInit {
 
-    constructor() { }
-
-    ngOnInit(): void {
-    }
-
-    sectionTitle: sectionTitleContent[] = [
+    sectionTitle: SectionTitleContent[] = [
         {
             title: 'App Screenshots',
-            paragraphText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            paragraphText: 'Some snapshoots inside our ijomails mobile app that we consider a simplesic and minimal design.'
         }
-    ]
+    ];
     screenshotImage: Image[] = [
         {
             img: 'assets/img/screenshot/1.png'
@@ -37,13 +39,10 @@ export class AppScreenshotsComponent implements OnInit {
         {
             img: 'assets/img/screenshot/6.png'
         }
-    ]
+    ];
+    constructor() { }
 
-}
-class sectionTitleContent {
-    title : string;
-    paragraphText : string;
-}
-class Image {
-    img : string;
+    ngOnInit(): void {
+    }
+
 }

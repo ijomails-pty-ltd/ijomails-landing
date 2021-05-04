@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+class SectionTitleContent {
+    title: string;
+    paragraphText: string;
+}
+class FeaturesContent {
+    icon: string;
+    title: string;
+    paragraph: string;
+}
 
 @Component({
     selector: 'app-app-features',
@@ -7,57 +16,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppFeaturesComponent implements OnInit {
 
+    sectionTitle: SectionTitleContent[] = [
+        {
+            title: 'App Features',
+            paragraphText: 'ijomails features are packed with paperless solutions.'
+        }
+    ];
+    singleAppFeatures: FeaturesContent[] = [
+        {
+            icon: 'las la-file-invoice',
+            title: 'Invoices',
+            paragraph: 'Not just an ordinary invoice,ijomails generate the same on other companies, But it\'s only for your contacts stored in ijomails platform.'
+        },
+        {
+            icon: 'las la-file-invoice-dollar',
+            title: 'Billings',
+            paragraph: 'Send and Pay bills from our huge number of biller partners with short charges implemented for your convenience.'
+        },
+        {
+            icon: 'las la-money-check',
+            title: 'Payments',
+            paragraph: 'Request, Sent and Pay directly on your contacts listed on our platform as easy as 1, 2, 3 in very easy steps and fast processing.'
+        },
+        {
+            icon: 'las la-receipt',
+            title: 'ePayslips',
+            paragraph: 'Payslips are now easy to create with ijomails, All employee can have their payroll right on that day it should as it is now electronically generated.'
+        },
+        {
+            icon: 'las la-envelope-open-text',
+            title: 'Mails',
+            paragraph: 'Our mailing support with the following types of mail options such letters, basic mail, and even scan your file as mail content.'
+        },
+        {
+            icon: 'las la-expand',
+            title: 'Document Scanning',
+            paragraph: 'Our advanced mail scanning support can capture any sizes and any type of documents to provide and effortless on creating mail content.'
+        }
+    ];
     constructor() { }
 
     ngOnInit(): void {
     }
 
-    sectionTitle: sectionTitleContent[] = [
-        {
-            title: 'App Features',
-            paragraphText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-        }
-    ]
-    singleAppFeatures: FeaturesContent[] = [
-        {
-            icon: 'las la-cloud-sun',
-            title: 'High Resolution',
-            paragraph: 'Lorem ipsum dolor sit amet, coectetur adipisicing elit, sed do eiusmod tpor incididunt ut labore et dolore mafasgna aliqua.'
-        },
-        {
-            icon: 'las la-lightbulb',
-            title: 'Unique Design',
-            paragraph: 'Lorem ipsum dolor sit amet, coectetur adipisicing elit, sed do eiusmod tpor incididunt ut labore et dolore mafasgna aliqua.'
-        },
-        {
-            icon: 'las la-desktop',
-            title: 'Full Responsive',
-            paragraph: 'Lorem ipsum dolor sit amet, coectetur adipisicing elit, sed do eiusmod tpor incididunt ut labore et dolore mafasgna aliqua.'
-        },
-        {
-            icon: 'las la-code',
-            title: 'Clean Code',
-            paragraph: 'Lorem ipsum dolor sit amet, coectetur adipisicing elit, sed do eiusmod tpor incididunt ut labore et dolore mafasgna aliqua.'
-        },
-        {
-            icon: 'las la-eye',
-            title: 'Retina Ready',
-            paragraph: 'Lorem ipsum dolor sit amet, coectetur adipisicing elit, sed do eiusmod tpor incididunt ut labore et dolore mafasgna aliqua.'
-        },
-        {
-            icon: 'las la-camera',
-            title: 'Unlimited Features',
-            paragraph: 'Lorem ipsum dolor sit amet, coectetur adipisicing elit, sed do eiusmod tpor incididunt ut labore et dolore mafasgna aliqua.'
-        }
-    ]
 
-}
-class sectionTitleContent {
-    title : string;
-    paragraphText : string;
-}
-class FeaturesContent {
-    icon : string;
-    title : string;
-    paragraph : string;
 }

@@ -18,22 +18,6 @@ export class NavbarComponent implements OnInit {
 
     location: any;
     routerSubscription: any;
-
-    constructor(private router: Router) {
-    }
-
-    ngOnInit(){
-        this.recallJsFuntions();
-    }
-
-    recallJsFuntions() {
-        this.routerSubscription = this.router.events
-        .pipe(filter(event => event instanceof NavigationEnd || event instanceof NavigationCancel))
-        .subscribe(event => {
-            this.location = this.router.url;
-        });
-    }
-    
     appLandingNavItem = [
         {
             id: 'home',
@@ -42,10 +26,6 @@ export class NavbarComponent implements OnInit {
         {
             id: 'about',
             title: 'About',
-        },
-        {
-            id: 'pricing',
-            title: 'Pricing',
         },
         {
             id: 'screenshots',
@@ -58,10 +38,6 @@ export class NavbarComponent implements OnInit {
         {
             id: 'faq',
             title: 'FAQ',
-        },
-        {
-            id: 'feedback',
-            title: 'Feedback',
         },
         {
             id: 'contact',
@@ -158,5 +134,21 @@ export class NavbarComponent implements OnInit {
             title: 'Contact',
         }
     ];
+
+    constructor(private router: Router) {
+    }
+
+    ngOnInit(): void{
+        this.recallJsFuntions();
+    }
+
+    recallJsFuntions(): void {
+        this.routerSubscription = this.router.events
+        .pipe(filter(event => event instanceof NavigationEnd || event instanceof NavigationCancel))
+        // tslint:disable-next-line: deprecation
+        .subscribe(event => {
+            this.location = this.router.url;
+        });
+    }
 
 }

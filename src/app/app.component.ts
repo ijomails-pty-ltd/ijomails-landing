@@ -18,16 +18,9 @@ declare let $: any;
 export class AppComponent implements OnInit {
     location: any;
     routerSubscription: any;
-
-    constructor(private router: Router) {
-    }
-
-    ngOnInit(){
-        this.recallJsFuntions();
-    }
-
-    recallJsFuntions() {
+    recallJsFuntions(): void {
         this.router.events
+        // tslint:disable-next-line: deprecation
         .subscribe((event) => {
             if ( event instanceof NavigationStart ) {
                 $('.preloader').fadeIn('slow');
@@ -35,6 +28,7 @@ export class AppComponent implements OnInit {
         });
         this.routerSubscription = this.router.events
         .pipe(filter(event => event instanceof NavigationEnd || event instanceof NavigationCancel))
+        // tslint:disable-next-line: deprecation
         .subscribe(event => {
             $.getScript('../assets/js/main.js');
             $('.preloader').fadeOut('slow');
@@ -45,4 +39,12 @@ export class AppComponent implements OnInit {
             window.scrollTo(0, 0);
         });
     }
+
+    constructor(private router: Router) {
+    }
+
+    ngOnInit(): void{
+        this.recallJsFuntions();
+    }
+
 }

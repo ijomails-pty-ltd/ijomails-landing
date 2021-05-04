@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+class Content {
+    icon: string;
+    title: string;
+    subTitle: string;
+}
 
 @Component({
     selector: 'app-app-funfacts',
@@ -7,37 +12,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppFunfactsComponent implements OnInit {
 
+    funFacts: Content[] = [
+        {
+            icon: 'las la-user-circle',
+            title: '2K',
+            subTitle: 'Users'
+        },
+        {
+            icon: 'las la-smile',
+            title: '1.8K',
+            subTitle: 'Happy Users'
+        },
+        {
+            icon: 'las la-star',
+            title: '1.5K',
+            subTitle: 'Reviews'
+        },
+        {
+            icon: 'las la-cloud-download-alt',
+            title: '2.5K',
+            subTitle: 'App Downloads'
+        }
+    ];
     constructor() { }
 
     ngOnInit(): void {
     }
 
-    funFacts: Content[] = [
-        {
-            icon: 'las la-user-circle',
-            title: '5M',
-            subTitle: 'Users'
-        },
-        {
-            icon: 'las la-smile',
-            title: '4M',
-            subTitle: 'Happy Users'
-        },
-        {
-            icon: 'las la-star',
-            title: '1M',
-            subTitle: 'Reviews'
-        },
-        {
-            icon: 'las la-cloud-download-alt',
-            title: '10M',
-            subTitle: 'App Downloads'
-        }
-    ]
 
-}
-class Content {
-    icon : string;
-    title : string;
-    subTitle : string;
 }

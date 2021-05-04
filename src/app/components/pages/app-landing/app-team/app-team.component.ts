@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+class SectionTitleContent {
+    title: string;
+    paragraphText: string;
+}
 
 @Component({
     selector: 'app-app-team',
@@ -7,114 +11,82 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppTeamComponent implements OnInit {
 
-    constructor() { }
-
-    ngOnInit(): void {
-    }
-
-    sectionTitle: sectionTitleContent[] = [
+    sectionTitle: SectionTitleContent[] = [
         {
             title: 'Our Expert Team',
-            paragraphText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            paragraphText: 'People behind ijomails success.'
         }
-    ]
+    ];
     singleTeamBox = [
         {
-            img: 'assets/img/team/team1.jpg',
-            title: 'Alex Maxwel',
+            img: 'assets/img/team/team2.jpg',
+            title: 'Anyier Akol',
             designation: 'CEO & Founder',
             social: [
                 {
-                    icon: "lab la-facebook-f",
-                    link: "#"
+                    icon: 'lab la-facebook-f',
+                    link: 'https://web.facebook.com/Anyier.Akol'
                 },
                 {
-                    icon: "lab la-twitter",
-                    link: "#"
+                    icon: 'las la-envelope',
+                    link: 'mailto:nyotadarling@gmail.com'
                 },
                 {
-                    icon: "lab la-linkedin-in",
-                    link: "#"
+                    icon: 'lab la-linkedin-in',
+                    link: 'https://www.linkedin.com/in/anyier-akol-46aaaa72/'
                 },
                 {
-                    icon: "lab la-instagram",
-                    link: "#"
-                }
+                    icon: 'lab la-instagram',
+                    link: 'https://www.instagram.com/anyier_jok/?hl=en'
+                },
+                {
+                    icon: 'lab la-twitter',
+                    link: 'https://twitter.com/atyuera?lang=en'
+                },
             ]
         },
         {
-            img: 'assets/img/team/team2.jpg',
-            title: 'Justin Roberto',
-            designation: 'Co-Founder',
+            img: 'assets/img/team/team1.jpg',
+            title: 'Maker Mayek',
+            designation: 'Lawyer/Legal Advisor',
             social: [
                 {
-                    icon: "lab la-facebook-f",
-                    link: "#"
+                    icon: 'lab la-twitter',
+                    link: 'https://twitter.com/MakMayek'
                 },
                 {
-                    icon: "lab la-twitter",
-                    link: "#"
+                    icon: 'las la-envelope',
+                    link: 'mailto:mmayek@mayeklegal.com.au'
                 },
                 {
-                    icon: "lab la-linkedin-in",
-                    link: "#"
+                    icon: 'lab la-linkedin-in',
+                    link: 'https://www.linkedin.com/in/maker-mayek-82a14749/'
                 },
                 {
-                    icon: "lab la-instagram",
-                    link: "#"
+                    icon: 'las la-globe',
+                    link: 'https://mayeklegal.com.au/'
                 }
             ]
         },
         {
             img: 'assets/img/team/team3.jpg',
-            title: 'Louis Agassiz',
-            designation: 'Web Developer',
+            title: 'Randy Rebucas',
+            designation: 'Sr. Software Engineer',
             social: [
                 {
-                    icon: "lab la-facebook-f",
-                    link: "#"
+                    icon: 'lab la-facebook-f',
+                    link: 'https://web.facebook.com/randycrebucas/'
                 },
                 {
-                    icon: "lab la-twitter",
-                    link: "#"
-                },
-                {
-                    icon: "lab la-linkedin-in",
-                    link: "#"
-                },
-                {
-                    icon: "lab la-instagram",
-                    link: "#"
-                }
-            ]
-        },
-        {
-            img: 'assets/img/team/team4.jpg',
-            title: 'Carl Anderson',
-            designation: 'Web Designer',
-            social: [
-                {
-                    icon: "lab la-facebook-f",
-                    link: "#"
-                },
-                {
-                    icon: "lab la-twitter",
-                    link: "#"
-                },
-                {
-                    icon: "lab la-linkedin-in",
-                    link: "#"
-                },
-                {
-                    icon: "lab la-instagram",
-                    link: "#"
+                    icon: 'las la-envelope',
+                    link: 'mailto:rebucasrandy1986@gmail.com'
                 }
             ]
         }
     ];
+    constructor() { }
 
-}
-class sectionTitleContent {
-    title : string;
-    paragraphText : string;
+    ngOnInit(): void {
+    }
+
 }
