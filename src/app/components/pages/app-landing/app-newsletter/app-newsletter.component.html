@@ -6,14 +6,31 @@
                     <img [src]="Image.img" alt="image">
                 </div>
             </div>
-
             <div class="col-lg-6 col-md-12">
                 <div class="newsletter-form-content" *ngFor="let Content of newsletterContent;">
                     <h2>{{Content.title}}</h2>
                     <p>{{Content.paragraph}}</p>
-                    <form class="newsletter-form">
-                        <input type="email" class="input-newsletter" placeholder="{{Content.inputPlaceholder}}" name="email">
-                        <button type="submit">{{Content.buttonText}}</button>
+                    <div class="alert alert-success" role="alert" *ngIf="showAlert">
+                        <h4 class="alert-heading">Well done!</h4>
+                        <p>Thank you for subscribing us. We will be sending you updates of ijomails if any arises.</p>
+                    </div>
+                    <form [formGroup]="form" (submit)="onSubmit()" class="newsletter-form">
+                        <input type="email" formControlName="email" class="input-newsletter" placeholder="{{Content.inputPlaceholder}}">
+                        <div *ngIf="formCtrls.email.errors  && formCtrls.email.touched">
+                            <ng-container *ngIf="formCtrls.email.errors.required">
+                                Email is required.
+                            </ng-container>
+                            <ng-container *ngIf="formCtrls.email.errors.maxlength">
+                                Only 50 max characters allowed.
+                            </ng-container>
+                            <ng-container *ngIf="formCtrls.email.errors.email">
+                                Invalid format of email.
+                            </ng-container>
+                        </div>
+                        <button type="submit">
+                            {{Content.buttonText}}
+                            <div class="spinner-border" role="status" *ngIf="submited"></div>
+                        </button>
                     </form>
                 </div>
             </div>

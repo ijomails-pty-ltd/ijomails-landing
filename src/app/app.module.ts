@@ -48,6 +48,7 @@ import { ProductsLandingComponent } from './components/pages/products-landing/pr
 import { ProductsBannerComponent } from './components/pages/products-landing/products-banner/products-banner.component';
 import { ProductsAboutComponent } from './components/pages/products-landing/products-about/products-about.component';
 import { ProductsFeaturesComponent } from './components/pages/products-landing/products-features/products-features.component';
+// tslint:disable-next-line: max-line-length
 import { ProductsSpecificationComponent } from './components/pages/products-landing/products-specification/products-specification.component';
 import { ProductsDiscoverComponent } from './components/pages/products-landing/products-discover/products-discover.component';
 import { ProductsUsersComponent } from './components/pages/products-landing/products-users/products-users.component';
@@ -57,6 +58,9 @@ import { ProductsFeedbackComponent } from './components/pages/products-landing/p
 import { ProductsFaqComponent } from './components/pages/products-landing/products-faq/products-faq.component';
 import { ProductsGalleryComponent } from './components/pages/products-landing/products-gallery/products-gallery.component';
 import { OtherProductsComponent } from './components/pages/products-landing/other-products/other-products.component';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+
 
 @NgModule({
   declarations: [
@@ -118,7 +122,8 @@ import { OtherProductsComponent } from './components/pages/products-landing/othe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { from } from 'rxjs';
+import { SubSink } from 'subsink';
+
+import { NewsletterService } from './../../../../shared/services/newsletter.service';
 class Image {
     img: string;
 }
@@ -29,10 +34,46 @@ export class AppNewsletterComponent implements OnInit {
             buttonText: 'Subscribe Now'
         }
     ];
-    constructor() { }
-
-    ngOnInit(): void {
+    public submited: boolean;
+    public showAlert: boolean;
+    public form: FormGroup;
+    private subs = new SubSink();
+    constructor(
+        private newsletterService: NewsletterService
+    ) {
+        this.submited = false;
+        this.showAlert = false;
     }
 
+    ngOnInit(): void {
 
+        this.form = new FormGroup({
+            email: new FormControl(null, {
+              updateOn: 'blur',
+              validators: [
+                Validators.required,
+                Validators.email,
+                Validators.maxLength(50)
+              ]
+            })
+        });
+    }
+
+    get formCtrls() {
+        return this.form.controls;
+      }
+
+    onSubmit() {
+        if (this.form.invalid) {
+            return;
+        }
+        this.submited = true;
+        // tslint:disable-next-line: deprecation
+        this.subs.sink = from(this.newsletterService.insert({email: this.form.value.email})).subscribe((e) => {
+            this.showAlert = true;
+            this.submited = false;
+        }, (error: any) => {
+            console.log(error);
+        });
+    }
 }
